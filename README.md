@@ -2,30 +2,14 @@
 
 API REST desenvolvida em Python para gerenciamento de uma biblioteca, utilizando FastAPI, PostgreSQL, SQLAlchemy e Pydantic.
 
-O projeto foi desenvolvido com foco na aplicação prática de conceitos de desenvolvimento de APIs, integração com banco de dados relacional, validação de dados e organização de uma aplicação backend.
-
 ## Tecnologias utilizadas
 
-* **Python** — Linguagem utilizada no desenvolvimento da aplicação.
+* **Python** — Linguagem utilizada no desenvolvimento.
 * **FastAPI** — Framework utilizado para construção da API REST.
-* **PostgreSQL** — Banco de dados relacional utilizado para persistência das informações.
-* **SQLAlchemy** — ORM utilizado para comunicação e manipulação dos dados no banco de dados.
-* **Pydantic** — Biblioteca utilizada para validação e serialização dos dados recebidos pela API.
-
-## Arquitetura
-
-A aplicação utiliza uma arquitetura baseada na separação entre:
-
-* **Rotas/Endpoints** — Responsáveis por receber e processar as requisições HTTP.
-* **Schemas** — Responsáveis pela validação e estruturação dos dados utilizando Pydantic.
-* **Models** — Representam as entidades armazenadas no banco de dados através do SQLAlchemy.
-* **Database** — Responsável pela configuração da conexão com o PostgreSQL e gerenciamento das sessões do banco.
-
-## Banco de dados
-
-O projeto utiliza o **PostgreSQL** como sistema de gerenciamento de banco de dados.
-
-A comunicação entre a aplicação e o banco é realizada através do **SQLAlchemy**, permitindo trabalhar com as entidades do banco por meio de modelos Python.
+* **PostgreSQL** — Banco de dados utilizado para persistência das informações.
+* **SQLAlchemy** — ORM utilizado para comunicação com o banco de dados.
+* **Pydantic** — Validação e estruturação dos dados.
+* **Uvicorn** — Servidor ASGI utilizado para executar a aplicação FastAPI.
 
 ## Instalação
 
@@ -33,11 +17,6 @@ Clone o repositório:
 
 ```bash
 git clone https://github.com/sla-b/BIblioteca.git
-```
-
-Entre no diretório do projeto:
-
-```bash
 cd BIblioteca
 ```
 
@@ -59,68 +38,80 @@ Instale as dependências:
 pip install -r requirements.txt
 ```
 
-## Configuração
-
-Antes de executar a aplicação, configure a conexão com o PostgreSQL de acordo com as configurações utilizadas no projeto.
-
-Caso utilize variáveis de ambiente, configure o arquivo `.env` com as informações necessárias para conexão com o banco de dados.
-
 ## Executando a aplicação
 
-Inicie o servidor utilizando o Uvicorn:
+Após instalar as dependências e configurar o banco de dados PostgreSQL, execute a aplicação utilizando o **Uvicorn**:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Após iniciar a aplicação, ela estará disponível localmente em:
+O comando acima inicia o servidor da aplicação FastAPI.
+
+Após executar o comando, a API estará disponível em:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-## Documentação da API
+### Acessando os endpoints
 
-Por utilizar FastAPI, o projeto disponibiliza documentação interativa automaticamente.
+Com o servidor Uvicorn em execução, os endpoints da API podem ser acessados através das rotas definidas na aplicação.
 
-### Swagger UI
+Além disso, o FastAPI disponibiliza uma documentação interativa automaticamente.
+
+**Swagger UI:**
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-### ReDoc
+**ReDoc:**
 
 ```text
 http://127.0.0.1:8000/redoc
 ```
 
-Essas interfaces permitem visualizar os endpoints disponíveis e realizar requisições diretamente pelo navegador.
+Através do **Swagger UI**, é possível visualizar os endpoints disponíveis, seus parâmetros, os modelos de dados e também realizar requisições diretamente pelo navegador.
 
-## Objetivo do projeto
+## Banco de dados
 
-O projeto foi desenvolvido como uma aplicação prática para consolidar conhecimentos em desenvolvimento backend com Python, trabalhando conceitos como:
+O projeto utiliza o **PostgreSQL** para armazenamento dos dados.
 
-* Desenvolvimento de APIs REST;
-* Métodos HTTP;
-* Integração com banco de dados PostgreSQL;
-* ORM com SQLAlchemy;
-* Validação de dados com Pydantic;
-* Estruturação de aplicações FastAPI;
+A comunicação entre a aplicação e o banco é realizada através do **SQLAlchemy**, enquanto o **Pydantic** é utilizado para validação e estruturação dos dados enviados e recebidos pela API.
+
+## Objetivo
+
+O projeto foi desenvolvido para colocar em prática conceitos de desenvolvimento backend e construção de APIs REST utilizando Python.
+
+Entre os principais conceitos aplicados estão:
+
+* APIs REST;
+* FastAPI;
+* Uvicorn;
+* PostgreSQL;
+* SQLAlchemy;
+* Pydantic;
+* Operações com banco de dados;
+* Validação de dados;
 * Documentação automática de APIs.
 
 ## Próximos passos
 
-Algumas funcionalidades que podem ser adicionadas futuramente ao projeto:
+Possíveis melhorias para versões futuras:
 
-* Autenticação e autorização de usuários;
-* JWT;
+* Implementação de autenticação com JWT;
+* Sistema de usuários;
 * Sistema de empréstimos e devoluções;
-* Controle de usuários;
-* Paginação de resultados;
-* Filtros e pesquisa de livros;
+* Paginação;
+* Filtros e pesquisa;
 * Testes automatizados;
 * Dockerização da aplicação.
+
+## Autor
+
+Desenvolvido por **Tiago**.
+
 
 ## Autor
 
